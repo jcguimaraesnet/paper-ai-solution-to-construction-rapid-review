@@ -1,0 +1,195 @@
+%% —---------------------------------------------------
+%% sbcreviews-en.tex
+%% Template for SBC Reviews 
+%% (https://journals-sol.sbc.org.br/index.php/reviews/) 
+%% 
+%% A versão do template inclui algumas
+%% modificações sobre o template original da REIC
+%% (https://journals-sol.sbc.org.br/index.php/reic)
+%%
+%% Licença: CCBY 4.0 
+%% (https://creativecommons.org/licenses/by/4.0/)
+%% Sociedade Brasileira de Computação.
+
+\documentclass[english]{sbcreviews-2025}%
+
+\usepackage[misc,geometry]{ifsym} 
+
+%\usepackage{graphicx} % carregada dentro da classe
+%\usepackage{fontspec} % carregada dentro da classe
+%\usepackage{fontawesome} % carregada dentro da classe
+%\usepackage{color} % carregada dentro da classe
+%\usepackage{hyperref} % carregada dentro da classe
+
+\usepackage{aas_macros}
+\usepackage[bottom]{footmisc}
+
+\usepackage{tabularray}
+% O pacote tabularray torna o uso dos pacotes abaixo desnecessarios.
+%\usepackage{supertabular}
+%\usepackage{multicol}
+%\usepackage{multirow}
+
+\usepackage{afterpage}
+\usepackage{url}
+\usepackage{pifont}
+
+\usepackage{array,booktabs,tabularx,threeparttable}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+% Códigos compactos para Specialization (use onde preferir)
+\newcommand{\GP}{\textbf{GP}}   % General-purpose
+\newcommand{\AG}{\textbf{AG}}   % App Generation
+\newcommand{\FE}{\textbf{FE}}   % Frontend-only
+\newcommand{\AU}{\textbf{AU}}   % Automation
+\newcommand{\CA}{\textbf{CA}}   % Code Analysis
+\newcommand{\SQ}{\textbf{SQ}}   % SQL-only
+\newcommand{\WP}{\textbf{WP}}   % WordPress
+\newcommand{\PY}{\textbf{PY}}   % Python
+\newcommand{\AN}{\textbf{AN}}   % Android
+\newcommand{\CJ}{\textbf{CJ}}   % COBOL \& Java
+\newcommand{\RE}{\textbf{RE}}   % Regex
+\newcommand{\WG}{\textbf{WG}}   % Website Generation
+\newcommand{\PJ}{\textbf{PJ}}   % Python \& JS/TS
+
+% Macro opcional para facilitar os triplos (ID, Nome, Cod)
+\newcommand{\Tech}[3]{#1 & #2 & #3}
+
+\setcitestyle{square}
+
+\definecolor{engtitle}{rgb}{0.5,0.5,0.5}
+\definecolor{orcidlogo}{rgb}{0.37,0.48,0.13}
+\definecolor{unilogo}{rgb}{0.16, 0.26, 0.58}
+\definecolor{maillogo}{rgb}{0.58, 0.16, 0.26}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.0}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=darkblue,urlcolor=darkblue,
+            anchorcolor=darkblue,citecolor=darkblue}
+%\hypersetup{colorlinks,citecolor=blue,linkcolor=blue,urlcolor=blue}
+% We disable hyperlinks by default with this line, to avoid the error "\pdfendlink ended up in different nesting level" while writing
+
+\jid{ROCS}
+\jtitle{SBC Computing Reviews, 2025, XX:1}
+\issn{2966-3938}
+\doi{10.5753/rocs.202X.XXXXXX}
+\copyrightstatement{This work is licensed under a Creative Commons Attribution 4.0 International License}
+\jyear{202X}
+
+\category{Review}
+
+\title[AI Solutions Applicable to Software Construction - A Rapid Multivocal Review]{AI Solutions Applicable to Software Construction - A Rapid Multivocal Review}
+
+%THE ORCID IS MANDATORY FOR EACH AUTHOR IN ROCS
+\author[Assis et al. 2025]{
+\affil{\textbf{Felipe Assis}~\orcidlink{0009-0001-0113-6239}~\textcolor{blue}{\faEnvelope}~~[{Universidade Federal do Rio de Janeiro}~|\href{mailto: ...}{~{\textit{fassis@cos.ufrj.br}}}~]}
+
+\affil{\textbf{Júlio César Guimarães}~\orcidlink{0009-0004-8626-5970}~[{Universidade Federal do Rio de Janeiro}~|\href{mailto: ...}{~{\textit{jcguimaraes@cos.ufrj.br}}}~]}
+
+\affil{\textbf{Sabrina Rocha}~\orcidlink{0000-0002-4894-6095}~[{Universidade Federal do Rio de Janeiro}~|\href{mailto: ...}{~{\textit{sabrinarocha@cos.ufrj.br}}}~]}
+
+\affil{\textbf{Rodrigo Feitosa Gonçalves}~\orcidlink{0000-0003-0960-3126}~[{Universidade Federal do Rio de Janeiro}~|\href{mailto: ...}{~{\textit{rfeitosa@cos.ufrj.br}}}~]}
+
+\affil{\textbf{Guilherme Horta Travassos}~\orcidlink{0000-0002-4258-0424}~[{Universidade Federal do Rio de Janeiro}~|\href{mailto: ...}{~{\textit{ght@cos.ufrj.br}}}~]}
+
+}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\maketitle
+
+\begin{mail}
+Avenida Horácio Macedo 2030, Centro de Tecnologia, Bloco H, sala 319 - Cidade Universitária - CEP: 21941-914 
+\end{mail}
+
+
+\begin{abstract-en}
+This study conducts a Rapid Multivocal Review (RMR) to systematically map Generative AI solutions applicable to software construction, integrating both academic and grey
+literature sources. The primary aim is to clarify the broader capabilities, practical accessibility, maturity levels, and limitations of AI-driven tools beyond conventional code generation. Utilizing a structured PICOC-based search strategy and advanced filtering
+methods, the review identifies 156 relevant Generative AI tools and categorizes them by usage context, including general-purpose tools, frontend-only solutions, and more robust app-generation platforms. The findings highlight varying maturity levels, ranging
+from widely adopted commercial tools to experimental prototypes. Key challenges identified include technical limitations related to context-awareness, operational constraints due to integration complexity and cloud dependencies, and legal concerns regarding data privacy. Future directions suggest extending the scope through additional repositories, integrating practitioner feedback, establishing automatic refinement loops, and enhancing classification methods with reinforcement learning. Continuous evaluation and updates are crucial, given the rapid technological evolution in Generative AI, to maintain relevance and practical
+applicability.
+\end{abstract-en}
+
+\begin{keywords}
+Generative Artificial Intelligence, Software Construction, Large Language Model, AI Tool
+\end{keywords}
+
+
+%\begin{dates}
+% This information will be provided by the editor befeore publishing the paper
+%\noindent{\sffamily\textbf{Received:}} DD Month YYYY~~~$\bullet$~~~
+%${\sffamily\textbf{Accepted:}} DD Month YYYY~~~$\bullet$~~~
+%{\sffamily\textbf{Published:}} DD Month YYYY
+%\end{dates}
+
+
+%\begin{license}
+%Published under the Creative Commons Attribution 4.0 International Public License (CC BY 4.0)
+%\end{license}
+
+\end{frontmatter}
+
+
+% =================================================================
+% Introduction
+% =================================================================
+\section{Introduction}\label{sec:intro}
+\input{1-introduction}
+
+
+% =================================================================
+% Related Work
+% =================================================================
+\section{Related Work}\label{sec:relatedwork}
+\input{2-related-work}
+
+
+% =================================================================
+% Research Method
+% =================================================================
+\section{Research Method}\label{sec:researchmethod}
+\input{3-research-method}
+
+
+% =================================================================
+% Results
+% =================================================================
+\section{Results}\label{sec:results}
+\input{4-results}
+
+
+% =================================================================
+% Discussion
+% =================================================================
+% \section{Discussion}\label{sec:discussion}
+% \input{5-discussion}
+
+
+% =================================================================
+% Future Work
+% =================================================================
+\section{Future Work and Threats to Validity}\label{sec:futurework}
+\input{6-future-work}
+
+
+% =================================================================
+% Final Remarks
+% =================================================================
+\section{Final Remarks}\label{sec:finalremarks}
+\input{7-final-remarks}
+
+% =================================================================
+% Acknowledgements
+% =================================================================
+\section{Acknowledgements}\label{sec:acknowledgements}
+\input{8-acknowledgements}
+
+% =================================================================
+% Bibliography
+% =================================================================
+\bibliographystyle{apalike-sol}
+\bibliography{9-refs}
+
+\end{document}

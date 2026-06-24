@@ -1,0 +1,19 @@
+\subsection{Future Work}
+
+Future work may expand along several complementary directions. First, the review's scope can be broadened by incorporating additional data sources, such as querying repositories like arXiv or GitHub using their native APIs with various filters, to identify a wider array of Generative AI tools applicable to software engineering. Employing techniques similar to those used in the AgentOps study \cite{dong2024taxonomy}, particularly leveraging repository metrics (e.g., stars, forks), can enhance content relevancy by filtering out redundant or derivative repositories. Each API has its own particularities, such as the GitHub API, which allows fewer characters and logic connectors, requiring a different search string.
+
+Introducing automatic feedback by integrating user-driven annotations or behavioral traces (e.g., GitHub issue discussions, Stack Overflow activities) could iteratively refine the relevance, accuracy, and usability of the cataloged tools. This continuous feedback approach ensures an evolving and highly practical resource for both academia and industry.
+
+Finally, the filtering pipeline can be augmented with reinforcement learning or optimized using prompting techniques. These advanced mechanisms could continuously improve classification accuracy and adaptability by leveraging incremental validation results from replication studies.
+
+
+\subsection{Threats to Validity}
+
+To assess the threats to validity in this study, we applied threat categories tailored for secondary studies in computing as recommended by \cite{ampatzoglou2019identifying}. Specifically, we recognized threats relating to (i) scope definition when crafting search strings, (ii) accuracy and objectivity during data extraction and description of observations, and (iii) researcher bias.
+
+To mitigate threats arising from the limited research scope, we constructed our search strings using the method described in \cite{garousi2020grey}, which were iteratively refined through pilot searches before final adoption. To address concerns regarding accuracy and objectivity, we employed and validated a structured data extraction protocol to facilitate systematic recording and the transparent verification of results.
+
+Researcher bias poses a particular challenge when selecting and interpreting grey literature, due to its often ambiguous or incomplete nature. To address this, we included additional relevant sources identified through links within the grey literature itself, thus broadening the initial coverage. However, it should be noted that our specific selection of GPT-4.1 inherently introduces a bias, as language models were not comprehensively evaluated, which may limit the generalizability of our findings.
+
+Finally, the generalizability of our conclusions may be affected by the rapidly evolving landscape of Generative AI technologies. Thus, continuous monitoring, updates, and periodic re-evaluations are essential to preserve the relevance and applicability of our results. For instance, in our review, we found some tools that were no longer maintained and some deprecated repositories that were initially made public just a few years ago, illustrating the rapid pace of change in this domain. 
+
