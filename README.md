@@ -43,12 +43,30 @@ The paper is written in LaTeX using the SBC Reviews class, under
 
 ## Building
 
-Compile the main document with a LaTeX toolchain (includes BibTeX):
+Compile the main document with `latexmk` (handles the pdflatex/BibTeX passes),
+sending every generated file to a `build/` subfolder so the source tree stays clean:
 
 ```bash
 cd SBC-Reviews-Class-Latex-v1.0
-pdflatex 0-main-en
-bibtex   0-main-en
-pdflatex 0-main-en
-pdflatex 0-main-en
+latexmk -pdf -outdir=build 0-main-en.tex
 ```
+
+The final `0-main-en.pdf` (and all intermediates) land in
+`SBC-Reviews-Class-Latex-v1.0/build/`, which is git-ignored.
+
+To remove all build artifacts:
+
+```bash
+latexmk -C -outdir=build
+```
+
+### Editing in VS Code
+
+The LaTeX Workshop output directory is preconfigured (`.vscode/settings.json`) to
+the same `build/` folder, so builds from the editor stay out of the source tree too.
+
+> **Overleaf note:** this project is also an Overleaf repository. Overleaf executes
+> any committed `.latexmkrc`, and a custom `$out_dir` there breaks Overleaf's PDF
+> preview. The `build/` redirection is therefore configured per-invocation
+> (`-outdir`) and in editor settings only — there is intentionally no committed
+> `.latexmkrc`. Overleaf compiles the paper with its own defaults, unaffected.
